@@ -271,7 +271,9 @@ class SessionRecord {
             return;
         }
         console.info("Closing session:", session);
+        delete this.sessions[session.indexInfo.baseKey]
         session.indexInfo.closed = Date.now();
+
     }
 
     openSession(session) {
