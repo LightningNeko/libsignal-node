@@ -150,12 +150,7 @@ class SessionCipher {
                     session,
                     plaintext
                 };
-            } catch(e) {
-                errs.push(e);
-            }
-        }
-        for (const e of errs) {
-            console.error("Session error:" + e, e.stack);
+            } catch(_) { }
         }
         throw new errors.SessionError("No matching sessions found for message");
     }
